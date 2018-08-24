@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'dva';
-import { Router, Route, Switch, IndexRoute } from 'dva/router';
 
 import { Layout, Menu, Icon } from 'antd';
 
@@ -28,15 +27,19 @@ class IndexPage extends React.Component {
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
             <Menu.Item key="1">
               <Icon type="user" />
-              <span>nav 1</span>
+              <span>dashboard</span>
             </Menu.Item>
             <Menu.Item key="2">
               <Icon type="video-camera" />
-              <span>nav 2</span>
+              <span>topics</span>
             </Menu.Item>
             <Menu.Item key="3">
               <Icon type="upload" />
-              <span>nav 3</span>
+              <span>jobs</span>
+            </Menu.Item>
+            <Menu.Item key="4">
+              <Icon type="user" />
+              <span>me</span>
             </Menu.Item>
           </Menu>
         </Sider>

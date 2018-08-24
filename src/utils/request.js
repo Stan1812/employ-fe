@@ -1,5 +1,6 @@
 import fetch from 'dva/fetch';
-
+import { getCookie } from './common';
+import { getAuthHeader, redirectLogin } from './auth';
 function parseJSON(response) {
   return response.json();
 }
@@ -22,7 +23,9 @@ function checkStatus(response) {
  * @return {object}           An object containing either "data" or "err"
  */
 export default function request(url, options) {
-  return fetch(url, options)
+  const csrfToken = getCookie('csrfToken');
+  const authHeader = getAuthHeader(csrfToken);
+  return fetch(url, { ...options, ...authHeader })
     .then(checkStatus)
     .then(parseJSON)
     .then(data => ({ data }))
