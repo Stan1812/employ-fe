@@ -18,7 +18,7 @@ const Login = ({
       if (errors) {
         return
       }
-      dispatch({ type: 'login/login', payload: values })
+      dispatch({ type: 'user/login', payload: values })
     })
   }
 

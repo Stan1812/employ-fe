@@ -1,4 +1,3 @@
-import config from '../config';
 import { getCookie, delCookie } from './common';
 
 export function getAuthHeader(csrf_token) {
@@ -13,7 +12,7 @@ export function getAuthHeader(csrf_token) {
 export function authenticated() {
   const csrf_token = getCookie('csrf_token');
   if (!csrf_token) {
-    redirectLogin();
+    // redirectLogin();
   }
 }
 
